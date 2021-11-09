@@ -1,5 +1,6 @@
 ﻿using PopularQuestionsAndAnswers.DynamicProgramming;
 using PopularQuestionsAndAnswers.DynamicProgramming.Google;
+using PopularQuestionsAndAnswers.Fundamentals;
 using PopularQuestionsAndAnswers.NonLinearDataStructures;
 using Spire.Pdf;
 using Spire.Pdf.General.Find;
@@ -94,6 +95,8 @@ namespace PopularQuestionsAndAnswers
             //};
             //SetMatrixZeroes.SetZeroes(jaggedArray);
 
+            BinarySearch.Binary_Search_RecursiveAlgorithm(new int[] { 3, 6, 8, 12, 14, 17, 25, 29, 31, 36, 42, 47, 53, 55, 62 }, 1);
+
             //var maxGold = new PathWithMaximumGold();
             //Console.WriteLine(maxGold.Solution());
 
@@ -114,8 +117,7 @@ namespace PopularQuestionsAndAnswers
             //    Console.WriteLine(item);
             //}
 
-            var checkPermutation = CheckPermutation.Solution("dog ", "god");
-            Console.WriteLine(checkPermutation);
+
         }
     }
 }
