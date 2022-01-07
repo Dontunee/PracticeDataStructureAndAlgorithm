@@ -1,18 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FreeSpire.PDF" Version="7.8.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="PaydayInvestor.Data">
-      <HintPath>..\..\Payday Investor Back Office\PaydayInvestor.Services\bin\Release\netcoreapp3.1\PaydayInvestor.Data.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
 </Project>
