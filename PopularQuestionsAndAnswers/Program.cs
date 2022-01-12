@@ -9,10 +9,12 @@ using System.Globalization;
 
 namespace PopularQuestionsAndAnswers
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine( BinarySearch.BinarySearch.FindSquareRoot(8));
         }
+
     }
 }

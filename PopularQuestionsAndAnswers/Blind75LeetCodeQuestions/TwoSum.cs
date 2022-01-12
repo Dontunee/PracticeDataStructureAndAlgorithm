@@ -31,7 +31,7 @@ namespace PopularQuestionsAndAnswers.Blind75LeetCodeQuestions
         }
 
 
-        public static int[] TwoSumDictionarySolution(int[] nums, int target)
+        public static int[] TwoSumOptimizedSolution(int[] nums, int target)
         {
             if (nums.Length < 2 || nums.Length >= 104)
                 if (target <= -Math.Pow(10,9) ||target >= Math.Pow(10,9))

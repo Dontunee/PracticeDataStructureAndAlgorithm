@@ -23,7 +23,7 @@ namespace Tests
         [InlineData(new int[] { 2, 7, 11, 15 }, 9)]
         public void TwoSumDictionarySolution_ValidArguments_ReturnsOutput(int[] numbers, int target)
         {
-            var response = TwoSum.TwoSumDictionarySolution(numbers, target);
+            var response = TwoSum.TwoSumOptimizedSolution(numbers, target);
             Assert.Equal(0, response[0]);
             Assert.Equal(1, response[1]);
         }
