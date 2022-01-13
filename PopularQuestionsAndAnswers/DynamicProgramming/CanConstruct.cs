@@ -8,12 +8,8 @@ namespace PopularQuestionsAndAnswers.DynamicProgramming
 {
      public class CanConstruct
     {
-        public int CanConstructSolution(string wordInput, string[] words, Dictionary<string, int> memoization = null)
+        public int CanConstructSolution(string wordInput, string[] words, Dictionary<string, int> memoization)
         {
-            if(memoization is null)
-            {
-                memoization = new Dictionary<string, int>();
-            }
             if(memoization.TryGetValue(words.ToString(), out int returnedValue))
             {
                 return returnedValue;
