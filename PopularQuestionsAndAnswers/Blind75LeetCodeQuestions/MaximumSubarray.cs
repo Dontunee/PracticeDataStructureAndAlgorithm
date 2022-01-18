@@ -11,10 +11,19 @@ namespace PopularQuestionsAndAnswers.Blind75LeetCodeQuestions
 
         public static int MaxSubArray(int[] nums)
         {
-            int currentSum = nums[0];
-            int maximumSum = int.MinValue;
+            var numsLength = nums.Length;
+            if (numsLength < 1 || numsLength > Math.Pow(10, 5))
+                return 0;
 
-            for(int i = 1; i < nums.Length; i++) { 
+            if (numsLength == 1)
+                return nums[0];
+
+            int currentSum = 0;
+            int maximumSum = nums[0];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] < -Math.Pow(10, 4) || nums[i] > Math.Pow(10, 4))
+                    return 0;
 
                 if (currentSum < 0)
                 {
