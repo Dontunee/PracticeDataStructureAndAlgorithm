@@ -16,7 +16,7 @@ namespace Tests
 
         public void FindMin_ValidInput_ValidOutput(int[] nums)
         {
-            var result = FindMinimumInSortedArray.FindMin(nums);
+            var result = MinimumInRotatedSortedArray.FindMin(nums);
             Assert.Equal(1, result);
 
         }

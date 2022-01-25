@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PopularQuestionsAndAnswers.Blind75LeetCodeQuestions
 {
-    public static class FindMinimumInSortedArray
+    public static class MinimumInRotatedSortedArray
     {
         public static int FindMin(int[] nums)
         {
