@@ -8,24 +8,6 @@ namespace PopularQuestionsAndAnswers.Random
 {
     public static class Problems
     {
-        //Valid Parentheses
-        //Given a string s containing just the characters '(", ')', (, '}', 'I' and ']', determine if the input string is valid.
-        //An input string is valid if:
-        //1. Open brackets must be closed by the same type of brackets.
-        //2. Open brackets must be closed in the correct order.
-        //Constraints:
-        //1 <= s.length <= 104
-        //s consists of parentheses only({[}])
-        //Example 1:
-        //Input: s="{}[[]]"
-        //Output: valid
-        //Example 2:
-        //Input: S = "{[](()[])}"
-        //Output: valid
-        //Example 3:
-        //Input: S = "(]"
-        //Output: invalid
-
         public static string IsValidParenthesis(string input)
         {
             string output = string.Empty;
@@ -88,5 +70,109 @@ namespace PopularQuestionsAndAnswers.Random
 
             return bracketList;
         }
+
+        public static List<string> Permutations(string input)
+        {
+            var resuslt = new List<string>();
+
+
+            if (input.Length == 1)
+            {
+                resuslt.Add(input);
+            }
+            else
+            {
+                for (int i = 0; i < input.Length; i++)
+                {
+                    foreach (var p in Permutations(EverythingElse(input,i)))
+                    {
+                        resuslt.Add(input[i] + p);
+                    }
+                }
+            }
+            return resuslt;
+        }
+
+        private static string EverythingElse(string input, int indexToIgnore)
+        {
+            var result = new StringBuilder();
+
+            for (int j = 0; j < input.Length; j++)
+            {
+                if (indexToIgnore != j)
+                    result.Append(input[j]);
+
+            }
+            return result.ToString();
+        }
+
+    }
+
+    public class BinaryTree
+    {
+        public int value;
+
+        public BinaryTree left { get; set; }
+
+        public BinaryTree right { get; set; }
+
+        bool BreadthFirstSearch(BinaryTree node, int searchFor)
+        {
+            var queue = new Queue<BinaryTree>();
+            queue.Enqueue(node);
+
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+
+                if (current == null) continue;
+
+                queue.Enqueue(current.left);
+                queue.Enqueue(current.right);
+
+                if (current.value == searchFor)
+                    return true;
+            }
+
+            return false;
+        }
+
+        bool DepthFirstSearch(BinaryTree node, int searchFor)
+        {
+            if (node == null)
+                return false;
+
+            if (node.value == searchFor)
+                return true;
+
+            return DepthFirstSearch(node.left, searchFor) || DepthFirstSearch(node.right, searchFor);
+        }
+
+        bool DepthFirstSearchLargeTree(BinaryTree node, int searchFor)
+        {
+            if (node == null)
+                return false;
+
+            var stack = new Stack<BinaryTree>();
+            stack.Push(node);
+
+            while (stack.Count > 0)
+            {
+                var current = stack.Pop();
+
+                if (current.value == searchFor)
+                    return true;
+
+                if (current.left != null)
+                    stack.Push(current.left);
+
+                if (current.right != null)
+                    stack.Push(current.right);
+            }
+
+            return false;
+        }
+
+
     }
 }

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PopularQuestionsAndAnswers
 {
     public static class CheckPermutation
     {
         public static bool Solution(string inputOne, string inputTwo)
         {
+            inputTwo.ToUpper();
             var trimInputOne = inputOne.Replace(" ", string.Empty);
             var trimInputTwo = inputTwo.Replace(" ", string.Empty);
             if (trimInputOne.Length != trimInputTwo.Replace(" ", string.Empty).Length) return false;

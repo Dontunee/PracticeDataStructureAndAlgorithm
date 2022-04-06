@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System;
+using PopularQuestionsAndAnswers.Random;
 
 namespace PopularQuestionsAndAnswers
 {
@@ -15,7 +17,7 @@ namespace PopularQuestionsAndAnswers
     {
         static void Main(string[] args)
         {
-            BackSpaceCompare("a#c", "b");
+            Problems.Permutations("ABC");
         }
 
         static bool BackSpaceCompare(string s , string t)
