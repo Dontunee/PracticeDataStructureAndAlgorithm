@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Linq;
 using System;
 using PopularQuestionsAndAnswers.Random;
+using PopularQuestionsAndAnswers.Random.AlgoExpert;
 
 namespace PopularQuestionsAndAnswers
 {
@@ -18,7 +19,7 @@ namespace PopularQuestionsAndAnswers
         static void Main(string[] args)
         {
 
-            Problems.Permutations("ABC");
+            Assessments.IsPalindrome("abcdcba");
         }
 
         static bool BackSpaceCompare(string s , string t)
