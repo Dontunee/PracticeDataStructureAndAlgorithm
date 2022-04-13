@@ -18,7 +18,7 @@ namespace PopularQuestionsAndAnswers.Random
             var openingBrackets = new Stack<char>();
             foreach (var character in input)
             {
-                if(parenthesisList.Contains(character))
+                if (parenthesisList.Contains(character))
                 {
                     if (dictionary.ContainsKey(character))
                     {
@@ -26,17 +26,17 @@ namespace PopularQuestionsAndAnswers.Random
                     }
                     else
                     {
-                        if(openingBrackets.Any())
+                        if (openingBrackets.Any())
                         {
                             var correspondingClosing = dictionary.GetValueOrDefault(openingBrackets.Pop());
-                            if(correspondingClosing != character)
+                            if (correspondingClosing != character)
                             {
-                                return  "invalid";
+                                return "invalid";
                             }
                         }
                         else
                         {
-                            return  "invalid";
+                            return "invalid";
                         }
                     }
                 }
@@ -48,7 +48,7 @@ namespace PopularQuestionsAndAnswers.Random
             return "valid";
         }
 
-        private static Dictionary<char,char> ListOfCorrespondingBrackets()
+        private static Dictionary<char, char> ListOfCorrespondingBrackets()
         {
             return new Dictionary<char, char>()
             {
@@ -84,7 +84,7 @@ namespace PopularQuestionsAndAnswers.Random
             {
                 for (int i = 0; i < input.Length; i++)
                 {
-                    foreach (var p in Permutations(EverythingElse(input,i)))
+                    foreach (var p in Permutations(EverythingElse(input, i)))
                     {
                         resuslt.Add(input[i] + p);
                     }
@@ -173,6 +173,32 @@ namespace PopularQuestionsAndAnswers.Random
             return false;
         }
 
+        List<int> BranchSums(BinaryTree root)
+        {
+            var result = new List<int>();
+             BranchSums(root, root.value,result);
+            // Write your code here.
+            return result;
+        }
+
+        void BranchSums(BinaryTree root, int sum,List<int> result)
+        {
+            sum += root.value;
+            if (root.left == null && root.right == null)
+            {
+                result.Add(sum);
+            }
+
+            if (root.left != null)
+            {
+                BranchSums(root.left, sum , result);
+            }
+
+            if (root.right != null)
+            {
+                BranchSums(root.right, sum, result);
+            }
+        }
 
     }
 }
