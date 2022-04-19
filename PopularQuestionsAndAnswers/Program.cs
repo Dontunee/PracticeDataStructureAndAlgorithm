@@ -19,7 +19,7 @@ namespace PopularQuestionsAndAnswers
         static void Main(string[] args)
         {
 
-            Assessments.CaesarCypherEncryptor("abc",52);
+            Assessments.GenerateDocument("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!");
         }
 
         static bool BackSpaceCompare(string s , string t)
